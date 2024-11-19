@@ -1,27 +1,16 @@
 package br.com.fiap.to;
 
 public abstract class OrcamentoTO {
-    private Long codigo;
-    private Double consumoMensal;
-    private Double custoPorPlaca;
-    private Double potenciaPlaca;
-    private int quantidadePlacas;
-    private Double custoTotal;
-    private Double custoInversor;
+    protected Long codigo;
+    protected Double consumoMensal; // Consumo médio em kWh
+    protected Double custoTotal; // Custo final do sistema
+    protected Integer quantidadePlacas; // Quantidade de placas necessárias
 
-    public OrcamentoTO(Long codigo, Double consumoMensal, Double custoPorPlaca, Double potenciaPlaca, Double custoInversor) {
-        this.codigo = codigo;
-        this.consumoMensal = consumoMensal;
-        this.custoPorPlaca = custoPorPlaca;
-        this.potenciaPlaca = potenciaPlaca;
-        this.custoInversor = custoInversor;
-    }
+    public abstract void calcularQuantidadePlacas(Double potenciaPlaca);
 
-    // Métodos abstratos para cálculos específicos
-    public abstract void calcularQuantidadePlacas();
     public abstract void calcularCustoTotal();
 
-    // Getters e Setters
+    // Getters e setters
     public Long getCodigo() {
         return codigo;
     }
@@ -29,7 +18,8 @@ public abstract class OrcamentoTO {
     public void setCodigo(Long codigo) {
         this.codigo = codigo;
     }
-    public double getConsumoMensal() {
+
+    public Double getConsumoMensal() {
         return consumoMensal;
     }
 
@@ -37,31 +27,7 @@ public abstract class OrcamentoTO {
         this.consumoMensal = consumoMensal;
     }
 
-    public double getCustoPorPlaca() {
-        return custoPorPlaca;
-    }
-
-    public void setCustoPorPlaca(Double custoPorPlaca) {
-        this.custoPorPlaca = custoPorPlaca;
-    }
-
-    public double getPotenciaPlaca() {
-        return potenciaPlaca;
-    }
-
-    public void setPotenciaPlaca(Double potenciaPlaca) {
-        this.potenciaPlaca = potenciaPlaca;
-    }
-
-    public int getQuantidadePlacas() {
-        return quantidadePlacas;
-    }
-
-    public void setQuantidadePlacas(int quantidadePlacas) {
-        this.quantidadePlacas = quantidadePlacas;
-    }
-
-    public double getCustoTotal() {
+    public Double getCustoTotal() {
         return custoTotal;
     }
 
@@ -69,11 +35,11 @@ public abstract class OrcamentoTO {
         this.custoTotal = custoTotal;
     }
 
-    public double getCustoInversor() {
-        return custoInversor;
+    public Integer getQuantidadePlacas() {
+        return quantidadePlacas;
     }
 
-    public void setCustoInversor(Double custoInversor) {
-        this.custoInversor = custoInversor;
+    public void setQuantidadePlacas(Integer quantidadePlacas) {
+        this.quantidadePlacas = quantidadePlacas;
     }
 }
