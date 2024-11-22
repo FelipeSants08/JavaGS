@@ -12,16 +12,14 @@ public class PlacaTO {
     @Positive(message = "A potência da placa deve ser maior que zero.")
     private Double potenciaPlaca;  // Potência da placa solar
 
-    @NotNull(message = "A região deve ser informada.")
-    private String regiao;
+
 
     public PlacaTO() {}
 
-    public PlacaTO(Long codigo, Double potenciaPlaca, Double custoPorPlaca, String regiao) {
+    public PlacaTO(Long codigo, Double potenciaPlaca, Double custoPorPlaca) {
         this.codigo = codigo;
         this.potenciaPlaca = potenciaPlaca;
         this.custoPorPlaca = custoPorPlaca;
-        this.regiao = regiao;
     }
 
     // Getters e Setters
@@ -49,11 +47,4 @@ public class PlacaTO {
         this.potenciaPlaca = potenciaPlaca;
     }
 
-    public String getRegiao() {
-        return regiao;
-    }
-
-    public void setRegiao(String regiao) {
-        this.regiao = regiao;
-    }
 }

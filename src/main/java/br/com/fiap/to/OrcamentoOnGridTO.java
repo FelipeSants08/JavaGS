@@ -1,6 +1,11 @@
 package br.com.fiap.to;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+
 public class OrcamentoOnGridTO extends OrcamentoTO {
+    @NotNull(message = "O custo não pode ser nulo")
+    @Positive(message = "O custo deve ser positivo")
     private Double custoInversor;
 
     @Override
